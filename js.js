@@ -12,7 +12,6 @@ $("document").ready(function() {
 			.css("backgroundPosition", Math.round(-300+(Math.random()*300)).toString()+"px 0px")
 			.show()
 			.fadeOut(850+(Math.random()*300), lapse);
-			//document.title = $("#lightning").css("backgroundImage");
 	}
 	lapse();
 
@@ -58,13 +57,12 @@ $("document").ready(function() {
 	
 	showPhrase();
 	
-	$("<embed>")
+
+	/*$("<embed>")
 		.attr("src", "under60.mp3")
 		.attr("autostart", false)
 		.attr("loop", true)
 		.attr("width", 0)
 		.attr("height", 0)
-		.appendTo($("body"));
-		
-	setTimeout(function() {$("embed").remove()}, 3000);
+		.appendTo($("body"));*/
 });
