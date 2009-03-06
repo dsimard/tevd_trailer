@@ -1,0 +1,55 @@
+body {
+	background-color:#000;
+	margin:0;
+	overflow:hidden;
+	background-image:url(body.jpg);
+	background-repeat:no-repeat;
+	font-family:MS Trebuchet;
+}
+
+#lightning {
+	width:2012px;
+	height:902px;
+	display:none;
+	background-image:url(back.jpg);
+	background-repeat:no-repeat;
+}
+
+h1 {
+	margin:0;
+	position:absolute;
+	font-size:700%;
+	left:200px;
+	top:200px;
+	z-index:1;
+	display:none;
+}
+
+h2 {
+	margin:0;
+	position:absolute;
+	font-size:200%;
+	left:225px;
+	top:325px;
+	z-index:1;
+	font-family:Verdana;
+	display:none;
+}
+
+h3 {
+	margin:0;
+	position:absolute;
+	font-size:200%;
+	left:500px;
+	top:400px;
+	z-index:1;
+	display:none;
+}
+
+span {
+	color:#fff;
+	position:absolute;
+	font-size:300%;
+	z-index:2;
+	font-family:Verdana;
+}
