@@ -17,7 +17,7 @@ $("document").ready(function() {
 	lapse();
 
   var phrases = ["It all began with a great idea",
-    /*"That came to life in a sudden.",
+    "That came to life in a sudden.",
     "It was Unfinished but promising",
     "and we stumbled and failed",
     "We let the idea grow",
@@ -29,7 +29,7 @@ $("document").ready(function() {
     "and what it was meant to be.",
     "We understand",
     "that with great potential",
-    "comes great expectations",*/
+    "comes great expectations",/**/
    ]
 
 	var showPhrase = function() {
@@ -57,4 +57,14 @@ $("document").ready(function() {
 	};
 	
 	showPhrase();
+	
+	$("<embed>")
+		.attr("src", "under60.mp3")
+		.attr("autostart", false)
+		.attr("loop", true)
+		.attr("width", 0)
+		.attr("height", 0)
+		.appendTo($("body"));
+		
+	setTimeout(function() {$("embed").remove()}, 3000);
 });
