@@ -22,33 +22,37 @@ body {
 
 h1 {
 	margin:0;
-	position:absolute;
 	font-size:700%;
-	left:200px;
-	top:200px;
 	z-index:1;
+	text-align:center;
 	display:none;
+	position:absolute;
+	width:100%;
+	top:200px;
 }
 
 h2 {
 	margin:0;
-	position:absolute;
 	font-size:200%;
-	left:225px;
-	top:325px;
+	width:100%;
 	z-index:1;
 	font-family:Verdana;
 	display:none;
+	text-align:center;
+	letter-spacing:-1px;
+	top:330px;
+	position:absolute;
 }
 
 h3 {
-	margin:0;
+	width:100%;
+	top:450px;
 	position:absolute;
+	margin:0;
 	font-size:200%;
-	left:500px;
-	top:400px;
 	z-index:1;
 	display:none;
+	text-align:center;
 }
 
 span {

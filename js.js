@@ -1,26 +1,53 @@
+/*
+http://www.flickr.com/photos/deansouglass/1271941375/
+http://www.flickr.com/photos/cfrausto/41327420/sizes/l/
+http://www.flickr.com/photos/deansouglass/1272045819/sizes/l/
+http://www.flickr.com/photos/ronalmog/2053473900/sizes/l/
+http://www.flickr.com/photos/akeg/1218754772/sizes/l/
+*/
 $("document").ready(function() {
-	$("h1, h2").hide();
+	var nbImages = 5;
+	var nbImagesLoaded = 0;	
+	
+	var imageLoaded = function() {
+		nbImagesLoaded++;
+		if (nbImagesLoaded == nbImages-1) {
+			showLigthnings();
+			showPhrase();
+		}
+	}
 
-	var lapse = function() {
-		setTimeout(lightning, rnd(800, 4000));
+	var preloadImages = function() {
+		for (var i = 1; i <= 5; i++) {
+			var img = new Image();
+			$(img)
+				.load(function() {
+					imageLoaded();
+				})
+				.attr("src", "back" + i + ".jpg")
+		}
+	}
+
+	preloadImages();
+	
+	var showLigthnings = function() {
+		setTimeout(lightning, rnd(800, 3000));
 	}
 
 	var lightning = function() {
 		nbImages = 3;
 		$("#lightning")
-			.css("backgroundImage", "url(back"+rnd(1, 3).toString()+".jpg)")
+			.css("backgroundImage", "url(back"+rnd(1, nbImages).toString()+".jpg)")
 			.css("backgroundPosition", rnd(-400, 0)+"px 0px")
 			.show()
-			.fadeOut(rnd(850, 1150), lapse);
+			.fadeOut(rnd(850, 1150), showLigthnings);
 	}
 	
 	var rnd = function(min, max) {
 		max |= min;
 		if (max <= min) min = 0;
-		return Math.round(min+(Math.random()*(max-min)));
+		return Math.round(min + (Math.random()*(max-min)));
 	}
-	
-	lapse();
 
   var phrases = ["It all began with a great idea that came to life in a sudden.",
     "It was promising but unfinished",
@@ -32,16 +59,15 @@ $("document").ready(function() {
     "It is what it was meant to be.",
     "We understand",
     "that with great potential...",
-    "comes great expectations",/**/
+    "comes great expectations",
    ]
-
 	var showPhrase = function() {
 		if (phrases.length > 0) {
 			setTimeout(function() {
 				$("<span>")
 					.hide()
 					.text(phrases[0])
-					.css("top", rnd(300)+"px")
+					.css("top", rnd($(window).height()-100)+"px")
 					.css("left", rnd(300)+"px")
 					.fadeIn(3500, function() {
 						$(this).fadeOut(3500);
@@ -58,16 +84,13 @@ $("document").ready(function() {
 				});
 			});
 		}
-	};
-	
-	showPhrase();
-	
+	};	
 
-	$("<embed>")
+	/*$("<embed>")
 		.attr("src", "under.mp3")
 		.attr("autostart", false)
-		.attr("loop", true)
+		.attr("loop", false)
 		.attr("width", 0)
 		.attr("height", 0)
-		.appendTo($("body"));
+		.appendTo($("body"));*/
 });
