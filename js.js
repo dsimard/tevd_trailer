@@ -15,19 +15,16 @@ $("document").ready(function() {
 	}
 	lapse();
 
-  var phrases = ["It all began with a great idea",
-    "That came to life in a sudden.",
-    "It was Unfinished but promising",
-    "and we stumbled and failed",
+  var phrases = ["It all began with a great idea that came to life in a sudden.",
+    "It was promising but unfinished",
+    "So we stumbled... and failed",
     "We let the idea grow",
     "And what was once an ambitious experiment",
-    "Has evolved into a complete solution",
-    "Where all pieces now fit together.",
-    "It's no more a time tracking tool over IM",
-    "It's the result of our initial vision",
-    "and what it was meant to be.",
+    "Has evolved into a complete solution where all pieces fit together",
+    "It's no more a time tracking tool over Instant Messaging",
+    "It is what it was meant to be.",
     "We understand",
-    "that with great potential",
+    "that with great potential...",
     "comes great expectations",/**/
    ]
 
