@@ -15,14 +15,40 @@ $("document").ready(function() {
 			showLigthnings();
 			showPhrase();
 			
-			// Start music
-			/*$("<embed>")
-				.attr("src", "http://www.timmyevolved.com/under.mp3")
-				.attr("autostart", true)
-				.attr("loop", false)
-				.attr("width", 0)
-				.attr("height", 0)
-				.appendTo($("body"));*/
+      // Start music
+      $("<object id='music'>")
+        .attr("classid", "clsid:D27CDB6E-AE6D-11cf-96B8-444553540000")
+        .attr("codebase","http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,0,0")
+        .attr("width","0")
+        .attr("height","0")
+        .attr("id","niftyPlayer1")
+        .append($("<param>")
+          .attr("name","movie")
+          .attr("value","niftyplayer.swf?file=under.mp3&as=1")
+        );
+      
+      $("#music")
+        .append($("<param>")
+          .attr("quality","high")
+      );     
+
+      $("#music")
+        .append($("<param>")
+          .attr("bgcolor","#000000")
+        );        
+
+      $("#music")
+        .append($("<embed>")
+          .attr("src","niftyplayer.swf?file=under.mp3&as=1")
+          .attr("quality","high")
+          .attr("bgcolor","#000000")
+          .attr("width","0")
+          .attr("height","0")
+          .attr("name","niftyPlayer1")
+          .attr("type","application/x-shockwave-flash")
+          .attr("pluginspage","http://www.macromedia.com/go/getflashplayer")
+          .appendTo($("body"))
+        );    
 		}
 	}
 
