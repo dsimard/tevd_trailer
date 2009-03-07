@@ -18,7 +18,7 @@ $("document").ready(function() {
 			// Start music
 			$("<embed>")
 				.attr("src", "under.mp3")
-				.attr("autostart", false)
+				.attr("autostart", true)
 				.attr("loop", false)
 				.attr("width", 0)
 				.attr("height", 0)
