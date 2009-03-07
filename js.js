@@ -17,7 +17,7 @@ $("document").ready(function() {
 			
 			// Start music
 			$("<embed>")
-				.attr("src", "under.mp3")
+				.attr("src", "http://www.timmyevolved.com/under.mp3")
 				.attr("autostart", true)
 				.attr("loop", false)
 				.attr("width", 0)
