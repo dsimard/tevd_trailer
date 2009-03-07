@@ -9,11 +9,17 @@ $("document").ready(function() {
 	var nbImages = 5;
 	var nbImagesLoaded = 0;	
 	
-	var imageLoaded = function() {
+	var imageLoaded = function(img) {
 		nbImagesLoaded++;
+		
+		$("#loading").append($("<div>").text(img.src))
+		
 		if (nbImagesLoaded == nbImages-1) {
-			showLigthnings();
-			showPhrase();
+			$("#loading").fadeOut(1500, function() {
+				showLigthnings();
+				showPhrase();
+			});
+		
 			
       // Start music
       $("<object id='music'>")
@@ -57,7 +63,7 @@ $("document").ready(function() {
 			var img = new Image();
 			$(img)
 				.load(function() {
-					imageLoaded();
+					imageLoaded(this);
 				})
 				.attr("src", "back" + i + ".jpg")
 		}
