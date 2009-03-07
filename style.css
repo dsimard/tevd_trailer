@@ -30,6 +30,22 @@ body {
 	color:#666;
 }
 
+#show_credits {
+	color:#333;
+	position:fixed;
+	bottom:0;
+	right:0;
+}
+
+#credits {
+	background-color:#fff;
+	position:fixed;
+	bottom:0;
+	right:0;
+	padding:0.3em;
+	display:none;
+}
+
 h1 {
 	margin:0;
 	font-size:700%;

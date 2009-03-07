@@ -21,7 +21,10 @@ var phrases = ["It all began with a great idea that came to life in a sudden.",
  ];
 
 $("document").ready(function() {	
-	//return;
+	$("#show_credits, #close_credits").click(function() {
+		$("#show_credits, #credits").toggle();
+	});
+
 	preloadMusic();
 	preloadImages();
 });
@@ -130,6 +133,7 @@ function showLigthnings() {
 	setTimeout(lightning, rnd(800, 3000));
 }
 
+// Cycling phrases
 function showPhrase() {
 		if (phrases.length > 0) {
 			setTimeout(function() {
