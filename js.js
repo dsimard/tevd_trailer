@@ -2,17 +2,24 @@ $("document").ready(function() {
 	$("h1, h2").hide();
 
 	var lapse = function() {
-		setTimeout(lightning, 800+(Math.random()*3200));
+		setTimeout(lightning, rnd(800, 4000));
 	}
 
 	var lightning = function() {
 		nbImages = 3;
 		$("#lightning")
-			.css("backgroundImage", "url(back"+Math.round(1+(Math.random()*(nbImages))).toString()+".jpg)")
-			.css("backgroundPosition", Math.round(-300+(Math.random()*300)).toString()+"px 0px")
+			.css("backgroundImage", "url(back"+rnd(1, 3).toString()+".jpg)")
+			.css("backgroundPosition", rnd(-400, 0)+"px 0px")
 			.show()
-			.fadeOut(850+(Math.random()*300), lapse);
+			.fadeOut(rnd(850, 1150), lapse);
 	}
+	
+	var rnd = function(min, max) {
+		max |= min;
+		if (max <= min) min = 0;
+		return Math.round(min+(Math.random()*(max-min)));
+	}
+	
 	lapse();
 
   var phrases = ["It all began with a great idea",
@@ -37,15 +44,16 @@ $("document").ready(function() {
 				$("<span>")
 					.hide()
 					.text(phrases[0])
-					.css("top", Math.round(Math.random()*300)+"px")
-					.css("left", Math.round(Math.random()*300)+"px")
+					.css("top", rnd(300)+"px")
+					.css("left", rnd(300)+"px")
 					.fadeIn(3500, function() {
-						$(this).fadeTo(3500, 0.001, function() { showPhrase(); })
+						$(this).fadeOut(3500);
+						showPhrase();
 					}).insertBefore($("#lightning"));
 			
 				phrases.shift();
 
-			}, 1000)
+			}, 0)
 		} else {
 			$("h1").hide().fadeIn(8000, function() {
 				$("h2").fadeIn(6000, function() {
@@ -58,11 +66,11 @@ $("document").ready(function() {
 	showPhrase();
 	
 
-	/*$("<embed>")
-		.attr("src", "under60.mp3")
+	$("<embed>")
+		.attr("src", "under.mp3")
 		.attr("autostart", false)
 		.attr("loop", true)
 		.attr("width", 0)
 		.attr("height", 0)
-		.appendTo($("body"));*/
+		.appendTo($("body"));
 });

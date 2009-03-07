@@ -15,6 +15,11 @@ body {
 	background-repeat:no-repeat;
 }
 
+#nosound {
+	position:absolute;
+	right:-30px;	
+}
+
 h1 {
 	margin:0;
 	position:absolute;
