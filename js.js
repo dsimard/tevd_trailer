@@ -14,6 +14,15 @@ $("document").ready(function() {
 		if (nbImagesLoaded == nbImages-1) {
 			showLigthnings();
 			showPhrase();
+			
+			// Start music
+			$("<embed>")
+				.attr("src", "under.mp3")
+				.attr("autostart", false)
+				.attr("loop", false)
+				.attr("width", 0)
+				.attr("height", 0)
+				.appendTo($("body"));
 		}
 	}
 
@@ -67,7 +76,7 @@ $("document").ready(function() {
 				$("<span>")
 					.hide()
 					.text(phrases[0])
-					.css("top", rnd($(window).height()-100)+"px")
+					.css("top", rnd($(window).height()-130)+"px")
 					.css("left", rnd(300)+"px")
 					.fadeIn(3500, function() {
 						$(this).fadeOut(3500);
@@ -85,12 +94,4 @@ $("document").ready(function() {
 			});
 		}
 	};	
-
-	$("<embed>")
-		.attr("src", "under.mp3")
-		.attr("autostart", false)
-		.attr("loop", false)
-		.attr("width", 0)
-		.attr("height", 0)
-		.appendTo($("body"));
 });
