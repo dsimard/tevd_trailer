@@ -21,12 +21,9 @@ var phrases = ["It all began with a great idea that came to life in a sudden.",
  ];
 
 $("document").ready(function() {	
+	//return;
 	preloadMusic();
 	preloadImages();
-	
-
-	
-  
 });
 
 // Randomize
@@ -43,6 +40,8 @@ function loadingMsg(text) {
 
 // Preload music
 function preloadMusic() {
+	loadingMsg("composing music...");
+	
 	$("<object id='music'>")
     .attr("classid", "clsid:D27CDB6E-AE6D-11cf-96B8-444553540000")
     .attr("codebase","http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,0,0")
@@ -72,12 +71,11 @@ function preloadMusic() {
 		  .attr("pluginspage","http://www.macromedia.com/go/getflashplayer")
 		  .appendTo($("body"))
 		);        
-   
-	loadingMsg("composing music...")
 }
 
 // Preload images
 function preloadImages() {
+	loadingMsg("loading images...");
 	var nbImagesLoaded = 0;
 	
 	var imageLoaded = function(img) {
