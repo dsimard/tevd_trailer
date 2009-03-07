@@ -86,11 +86,11 @@ $("document").ready(function() {
 		}
 	};	
 
-	/*$("<embed>")
+	$("<embed>")
 		.attr("src", "under.mp3")
 		.attr("autostart", false)
 		.attr("loop", false)
 		.attr("width", 0)
 		.attr("height", 0)
-		.appendTo($("body"));*/
+		.appendTo($("body"));
 });
