@@ -27,10 +27,11 @@ $("document").ready(function() {
         .attr("codebase","http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,0,0")
         .attr("width","0")
         .attr("height","0")
-        .attr("id","niftyPlayer1")
+        .attr("id","music")
+        .appendTo($("body"))
         .append($("<param>")
           .attr("name","movie")
-          .attr("value","niftyplayer.swf?file=under.mp3&as=1")
+          .attr("value","niftyplayer.swf?file=under.mp3&as=1")        
         );
       
       $("#music")
@@ -50,11 +51,12 @@ $("document").ready(function() {
           .attr("bgcolor","#000000")
           .attr("width","0")
           .attr("height","0")
-          .attr("name","niftyPlayer1")
+          .attr("name","music")
           .attr("type","application/x-shockwave-flash")
-          .attr("pluginspage","http://www.macromedia.com/go/getflashplayer")
-          .appendTo($("body"))
-        );    
+          .attr("pluginspage","http://www.macromedia.com/go/getflashplayer")          
+        );        
+        
+                        
 		}
 	}
 
