@@ -90,15 +90,16 @@ function preloadImages(images) {
 	var imageLoaded = function(img) {
 		nbImagesLoaded++;
 		
-		loadingMsg("Loading image "+img.src);
+		loadingMsg("Image loaded : "+img.src);
 		
 		// If ready, start 
-		if (nbImagesLoaded == lightnings.length-1) {
+		if (nbImagesLoaded == images.length) {
 			startAnimation();
 		}
 	}
 
 	for (var image in images) {
+		loadingMsg("Loading "+images[image])
 		var img = new Image();
 		$(img)
 			.load(function() {
