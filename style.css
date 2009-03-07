@@ -20,6 +20,10 @@ body {
 	right:-30px;	
 }
 
+#loading {
+	color:#fff;
+}
+
 h1 {
 	margin:0;
 	font-size:700%;

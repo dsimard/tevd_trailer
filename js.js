@@ -9,20 +9,26 @@ $("document").ready(function() {
 	var nbImages = 5;
 	var nbImagesLoaded = 0;	
 	
-	var imageLoaded = function() {
+	var imageLoaded = function(img) {
 		nbImagesLoaded++;
+		
+		$("#loading").append($("<div>").text(img.src))
+		
 		if (nbImagesLoaded == nbImages-1) {
-			showLigthnings();
-			showPhrase();
+			$("#loading").fadeOut(1500, function() {
+				showLigthnings();
+				showPhrase();
+			});
+		
 			
 			// Start music
-			$("<embed>")
+			/*$("<embed>")
 				.attr("src", "under.mp3")
 				.attr("autostart", true)
 				.attr("loop", false)
 				.attr("width", 0)
 				.attr("height", 0)
-				.appendTo($("body"));
+				.appendTo($("body"));*/
 		}
 	}
 
@@ -31,7 +37,7 @@ $("document").ready(function() {
 			var img = new Image();
 			$(img)
 				.load(function() {
-					imageLoaded();
+					imageLoaded(this);
 				})
 				.attr("src", "back" + i + ".jpg")
 		}
