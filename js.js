@@ -1,6 +1,6 @@
-var bodyBackground = "body.jpg";
+var bodyBackground = "http://1715839795222571267-a-azankatech-com-s-sites.googlegroups.com/a/azankatech.com/timmyevolved/Home/back1.jpg";
 var lightnings = [
-	{url:"back1.jpg", yOffset:0},
+	{url:"http://1715839795222571267-a-azankatech-com-s-sites.googlegroups.com/a/azankatech.com/timmyevolved/Home/body.jpg", yOffset:0},
 	{url:"http://farm2.static.flickr.com/1160/1272045819_ee2919522f_o.jpg", yOffset:-900},
 	{url:"http://farm3.static.flickr.com/2417/2053473900_68aa754870_o.jpg", yOffset:-120},
 	{url:"http://farm2.static.flickr.com/1220/1218754772_d85c2e3407_o.jpg", yOffset:-120},
@@ -10,6 +10,8 @@ var lightning_images = [];
 for (var lightning in lightnings) {
 	lightning_images.push(lightnings[lightning].url);
 }
+
+var mp3Url = "http://1715839795222571267-a-azankatech-com-s-sites.googlegroups.com/a/azankatech.com/timmyevolved/Home/under.mp3";
 
 var phrases = ["It all began with a great idea that came to life in a sudden.",
   "It was promising but unfinished",
@@ -57,7 +59,7 @@ function preloadMusic() {
     .attr("id","niftyPlayer")
     .append($("<param>")
       .attr("name","movie")
-      .attr("value","niftyplayer.swf?file=under.mp3")
+      .attr("value","niftyplayer.swf?file="+mp3Url)
     )
     .append($("<param>")
     	.attr("quality","high")
@@ -68,7 +70,7 @@ function preloadMusic() {
 
 	$("#music")
 		.append($("<embed>")
-		  .attr("src","niftyplayer.swf?file=under.mp3")
+		  .attr("src","niftyplayer.swf?file="+mp3Url)
 		  .attr("quality","high")
 		  .attr("bgcolor","#000000")
 		  .attr("width","0")
