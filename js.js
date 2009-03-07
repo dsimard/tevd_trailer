@@ -6,55 +6,31 @@ http://www.flickr.com/photos/ronalmog/2053473900/sizes/l/
 http://www.flickr.com/photos/akeg/1218754772/sizes/l/
 */
 $("document").ready(function() {
+	console.log(niftyplayer);
+
 	var nbImages = 5;
 	var nbImagesLoaded = 0;	
 	
 	var imageLoaded = function(img) {
 		nbImagesLoaded++;
 		
-		$("#loading").append($("<div>").text(img.src))
+		loadingMsg(img.src);
 		
+		// If ready, start 
 		if (nbImagesLoaded == nbImages-1) {
 			$("#loading").fadeOut(1500, function() {
 				showLigthnings();
 				showPhrase();
+
+		   	// Start music
+				niftyplayer("niftyplayer").play();
+				
+				// Stop music when clicking
+				$("#nomusic").show().click(function() {
+					niftyplayer("niftyplayer").stop();
+					$(this).fadeOut();
+				})
 			});
-		
-			
-      // Start music
-      $("<object id='music'>")
-        .attr("classid", "clsid:D27CDB6E-AE6D-11cf-96B8-444553540000")
-        .attr("codebase","http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,0,0")
-        .attr("width","0")
-        .attr("height","0")
-        .attr("id","niftyPlayer1")
-        .append($("<param>")
-          .attr("name","movie")
-          .attr("value","niftyplayer.swf?file=under.mp3&as=1")
-        );
-      
-      $("#music")
-        .append($("<param>")
-          .attr("quality","high")
-      );     
-
-      $("#music")
-        .append($("<param>")
-          .attr("bgcolor","#000000")
-        );        
-
-      $("#music")
-        .append($("<embed>")
-          .attr("src","niftyplayer.swf?file=under.mp3&as=1")
-          .attr("quality","high")
-          .attr("bgcolor","#000000")
-          .attr("width","0")
-          .attr("height","0")
-          .attr("name","niftyPlayer1")
-          .attr("type","application/x-shockwave-flash")
-          .attr("pluginspage","http://www.macromedia.com/go/getflashplayer")
-          .appendTo($("body"))
-        );    
 		}
 	}
 
@@ -70,6 +46,10 @@ $("document").ready(function() {
 	}
 
 	preloadImages();
+	
+	var loadingMsg = function(text) {
+		$("#loading").append($("<div>").text(text))
+	}
 	
 	var showLigthnings = function() {
 		setTimeout(lightning, rnd(800, 3000));
@@ -126,4 +106,36 @@ $("document").ready(function() {
 			});
 		}
 	};	
+	
+  $("<object id='music'>")
+    .attr("classid", "clsid:D27CDB6E-AE6D-11cf-96B8-444553540000")
+    .attr("codebase","http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,0,0")
+    .attr("width","0")
+    .attr("height","0")
+    .attr("id","niftyPlayer")
+    .append($("<param>")
+      .attr("name","movie")
+      .attr("value","niftyplayer.swf?file=under.mp3")
+    )
+    .append($("<param>")
+    	.attr("quality","high")
+    )
+    .append($("<param>")
+      .attr("bgcolor","#000000")
+    )       
+
+    $("#music")
+      .append($("<embed>")
+        .attr("src","niftyplayer.swf?file=under.mp3")
+        .attr("quality","high")
+        .attr("bgcolor","#000000")
+        .attr("width","0")
+        .attr("height","0")
+        .attr("name","niftyplayer")
+        .attr("type","application/x-shockwave-flash")
+        .attr("pluginspage","http://www.macromedia.com/go/getflashplayer")
+        .appendTo($("body"))
+      );  
+      
+    loadingMsg("composing music...")
 });

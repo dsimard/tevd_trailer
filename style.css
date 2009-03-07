@@ -15,13 +15,19 @@ body {
 	background-repeat:no-repeat;
 }
 
-#nosound {
-	position:absolute;
-	right:-30px;	
+#nomusic {
+	position:fixed;
+	right:0px;	
+	display:none;
+	z-index:1;
 }
 
+	#nomusic img {
+		border:none;
+	}
+
 #loading {
-	color:#fff;
+	color:#666;
 }
 
 h1 {
