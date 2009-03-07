@@ -16,13 +16,13 @@ $("document").ready(function() {
 			showPhrase();
 			
 			// Start music
-			$("<embed>")
+			/*$("<embed>")
 				.attr("src", "http://www.timmyevolved.com/under.mp3")
 				.attr("autostart", true)
 				.attr("loop", false)
 				.attr("width", 0)
 				.attr("height", 0)
-				.appendTo($("body"));
+				.appendTo($("body"));*/
 		}
 	}
 
