@@ -1,11 +1,15 @@
-/*
-http://www.flickr.com/photos/deansouglass/1271941375/
-http://www.flickr.com/photos/cfrausto/41327420/sizes/l/
-http://www.flickr.com/photos/deansouglass/1272045819/sizes/l/
-http://www.flickr.com/photos/ronalmog/2053473900/sizes/l/
-http://www.flickr.com/photos/akeg/1218754772/sizes/l/
-*/
-var lightnings = ["back1.jpg", "back2.jpg", "back3.jpg", "back4.jpg", "back5.jpg"]
+var bodyBackground = "body.jpg";
+var lightnings = [
+	{url:"back1.jpg", yOffset:0},
+	{url:"http://farm2.static.flickr.com/1160/1272045819_ee2919522f_o.jpg", yOffset:-900},
+	{url:"http://farm3.static.flickr.com/2417/2053473900_68aa754870_o.jpg", yOffset:-120},
+	{url:"http://farm2.static.flickr.com/1220/1218754772_d85c2e3407_o.jpg", yOffset:-120},
+]
+
+var lightning_images = [];
+for (var lightning in lightnings) {
+	lightning_images.push(lightnings[lightning].url);
+}
 
 var phrases = ["It all began with a great idea that came to life in a sudden.",
   "It was promising but unfinished",
@@ -26,7 +30,7 @@ $("document").ready(function() {
 	});
 
 	preloadMusic();
-	preloadImages();
+	preloadImages(lightning_images.concat([bodyBackground]));
 });
 
 // Randomize
@@ -77,14 +81,14 @@ function preloadMusic() {
 }
 
 // Preload images
-function preloadImages() {
+function preloadImages(images) {
 	loadingMsg("loading images...");
 	var nbImagesLoaded = 0;
 	
 	var imageLoaded = function(img) {
 		nbImagesLoaded++;
 		
-		loadingMsg(img.src);
+		loadingMsg("Loading image "+img.src);
 		
 		// If ready, start 
 		if (nbImagesLoaded == lightnings.length-1) {
@@ -92,17 +96,20 @@ function preloadImages() {
 		}
 	}
 
-	for (lightning in lightnings) {
+	for (var image in images) {
 		var img = new Image();
 		$(img)
 			.load(function() {
 				imageLoaded(this);
 			})
-			.attr("src", lightnings[lightning])
+			.attr("src", images[image])
 	}
 }
 
 function startAnimation() {
+	// set background for body
+	$("body").css("backgroundImage", "url(body.jpg)");
+
 	$("#loading").fadeOut(1500, function() {
 	 	// Start music
 		niftyplayer("niftyplayer").play();
@@ -120,11 +127,11 @@ function startAnimation() {
 
 // Show a lightning after some time
 function showLigthnings() {
-	console.log("Showlightnings");
 	var lightning = function() {
+		var l = lightnings[rnd(lightnings.length-1)];
 		$("#lightning")
-			.css("backgroundImage", "url("+lightnings[rnd(lightnings.length-1)].toString()+")")
-			.css("backgroundPosition", rnd(-400, 0)+"px 0px")
+			.css("backgroundImage", "url("+l.url+")")
+			.css("backgroundPosition", rnd(-400, 0)+"px "+l.yOffset+"px")
 			.show()
 			.fadeOut(rnd(850, 1150), showLigthnings);
 			console.log($("#lightning").css("backgroundImage"));

@@ -2,7 +2,7 @@ body {
 	background-color:#000;
 	margin:0;
 	overflow:hidden;
-	background-image:url(body.jpg);
+	xbackground-image:url(body.jpg);
 	background-repeat:no-repeat;
 	font-family:MS Trebuchet;
 }
@@ -11,8 +11,19 @@ body {
 	width:2012px;
 	height:902px;
 	display:none;
-	background-image:url(back.jpg);
 	background-repeat:no-repeat;
+	height:1100px;
+	
+	/*
+	background-image:url(http://farm2.static.flickr.com/1160/1272045819_ee2919522f_o.jpg);
+	background-position:0 -900px;
+	
+	background-image:url(http://farm3.static.flickr.com/2417/2053473900_68aa754870_o.jpg);
+	background-position:0 -120px;
+
+	background-image:url(http://farm2.static.flickr.com/1220/1218754772_d85c2e3407_o.jpg);	
+	background-position:0 -120px;
+	*/
 }
 
 #nomusic {
