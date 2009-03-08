@@ -20,7 +20,6 @@ var FlashHelper =
 function niftyplayer(name)
 {
 	this.obj = FlashHelper.getMovie(name);
-
 	if (!FlashHelper.movieIsLoaded(this.obj)) return;
 
 	this.play = function () {
