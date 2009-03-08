@@ -57,6 +57,7 @@ function preloadMusic() {
     .attr("width","0")
     .attr("height","0")
     .attr("id","niftyPlayer")
+    .appendTo($("body"))
     .append($("<param>")
       .attr("name","movie")
       .attr("value","niftyplayer.swf?file="+mp3Url)
@@ -79,8 +80,6 @@ function preloadMusic() {
 		  .attr("type","application/x-shockwave-flash")
 		  .attr("pluginspage","http://www.macromedia.com/go/getflashplayer")		  
 		);        
-    
-    $("#music").appendTo($("body"));
 }
 
 // Preload images
