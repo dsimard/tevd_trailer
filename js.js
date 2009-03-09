@@ -14,12 +14,12 @@ for (var lightning in lightnings) {
 var mp3Url = "http://1715839795222571267-a-azankatech-com-s-sites.googlegroups.com/a/azankatech.com/timmyevolved/Home/under.mp3";
 mp3Url = "under.mp3";
 
-var phrases = ["It all began with a great idea that came to life in a sudden.",
+var phrases = ["It all began with a great idea that came to life in a sudden",
   "It was promising but unfinished",
-  "So we stumbled... and failed",
+  "So we stumbled... and fell",
   "We let the idea grow",
-  "And what was once an ambitious experiment",
-  "Has evolved into a complete solution where all pieces fit together",
+  "and what was once an ambitious experiment",
+  "has evolved into a complete solution where all pieces fit together",
   "It's no more a time tracking tool over Instant Messaging",
   "It is what it was meant to be.",
   "We understand",
