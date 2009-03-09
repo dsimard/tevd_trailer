@@ -49,13 +49,17 @@ body {
 }
 
 #credits {
-	background-color:#fff;
+	background-color:#000;
 	position:fixed;
 	bottom:0;
 	right:0;
 	padding:0.3em;
 	display:none;
+  color:#333;
 }
+  #credits a {
+    color:#990000;
+  }
 
 h1 {
 	margin:0;
