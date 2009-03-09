@@ -21,7 +21,7 @@ function niftyplayer(name)
 {
 	this.obj = FlashHelper.getMovie(name);
 
-	if (!FlashHelper.movieIsLoaded(this.obj)) return;
+	//if (!FlashHelper.movieIsLoaded(this.obj)) return;
 
 	this.play = function () {
 		this.obj.TCallLabel('/','play');
