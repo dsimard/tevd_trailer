@@ -112,7 +112,6 @@ function showLigthnings() {
 			.css("backgroundPosition", rnd(-400, 0)+"px "+l.yOffset+"px")
 			.show()
 			.fadeOut(rnd(850, 1150), showLigthnings);
-		console.log("lightning", l.url);
 	}
 
 	setTimeout(lightning, rnd(800, 3000));
