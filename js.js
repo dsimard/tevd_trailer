@@ -26,10 +26,22 @@ var phrases = ["It all began with a great idea that came to life in a sudden",
   "that with great potential...",
   "comes great expectations",
  ];
+ 
+var privateBeta = [
+	"I want to participate to your amazing private beta",
+	"I can't wait to try timmyEvolved but for now, I have to go to the bathroom",
+	"would you marry me?",
+];
 
 $(document).ready(function() {	
 	$("#show_credits, #close_credits").click(function() {
-		$("#show_credits, #credits").toggle();
+		$("#more").toggle();
+	});
+	
+	// private beta
+	$("#beta").click(function() {
+		document.location = "http://twitter.com/home?status=" + 
+			escape("#tevd_private @timmyevolved " + privateBeta[rnd(privateBeta.length-1)]);
 	});
 	
 	loadingMsg("Loading music...");

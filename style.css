@@ -2,7 +2,6 @@ body {
 	background-color:#000;
 	margin:0;
 	overflow:hidden;
-	xbackground-image:url(body.jpg);
 	background-repeat:no-repeat;
 	font-family:MS Trebuchet;
 }
@@ -13,17 +12,6 @@ body {
 	display:none;
 	background-repeat:no-repeat;
 	height:1100px;
-	
-	/*
-	background-image:url(http://farm2.static.flickr.com/1160/1272045819_ee2919522f_o.jpg);
-	background-position:0 -900px;
-	
-	background-image:url(http://farm3.static.flickr.com/2417/2053473900_68aa754870_o.jpg);
-	background-position:0 -120px;
-
-	background-image:url(http://farm2.static.flickr.com/1220/1218754772_d85c2e3407_o.jpg);	
-	background-position:0 -120px;
-	*/
 }
 
 #nomusic {
@@ -41,32 +29,54 @@ body {
 	color:#666;
 }
 
-#show_credits {
+#footer {
 	color:#333;
 	position:fixed;
 	bottom:0;
 	right:0;
 }
 
-#credits {
+	#footer a {
+		color:#333;
+	}
+
+#more {
 	background-color:#000;
 	position:fixed;
 	bottom:0;
 	right:0;
-	padding:0.3em;
+	padding:0.5em;
 	display:none;
-  color:#333;
+  color:#999;
+  z-index:10;
 }
-  #credits a {
+  #more a {
     color:#990000;
+    font-weight:bold;
   }
+  
+  #more #credits {
+  	font-size:75%;
+  	margin-top:3em;
+  	color:#222;  	
+  }
+  
+  	#more #credits a {
+  		color:#333;
+  	}
+
+h1, h2, h3 {
+	display:none;
+}
+body {
+	/*background-image:url(body.jpg);*/
+}
 
 h1 {
 	margin:0;
 	font-size:700%;
 	z-index:1;
 	text-align:center;
-	display:none;
 	position:absolute;
 	width:100%;
 	top:200px;
@@ -78,7 +88,6 @@ h2 {
 	width:100%;
 	z-index:1;
 	font-family:Verdana;
-	display:none;
 	text-align:center;
 	letter-spacing:-1px;
 	top:330px;
@@ -92,7 +101,6 @@ h3 {
 	margin:0;
 	font-size:200%;
 	z-index:1;
-	display:none;
 	text-align:center;
 }
 
