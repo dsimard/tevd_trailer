@@ -26,7 +26,6 @@ var phrases = ["It all began with a great idea that came to life in a sudden",
   "that with great potential...",
   "comes great expectations",
  ];
- 
 var privateBeta = [
 	"I want to participate to your amazing private beta",
 	"I can't wait to try timmyEvolved but for now, I have to go to the bathroom",

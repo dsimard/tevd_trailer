@@ -64,6 +64,12 @@ body {
   	#more #credits a {
   		color:#333;
   	}
+  	
+#twitter {
+	color:#666;
+	font-size:80%;
+	float:left;
+}
 
 h1, h2, h3 {
 	display:none;
