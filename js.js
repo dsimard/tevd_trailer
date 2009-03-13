@@ -24,12 +24,12 @@ var phrases = ["It all began with a great idea that came to life in a sudden",
   "It is what it was meant to be.",
   "We understand",
   "that with great potential...",
-  "comes great expectations",
+  "comes great expectations"
  ];
 var privateBeta = [
 	"I want to participate to your amazing private beta",
 	"I can't wait to try timmyEvolved but for now, I have to go to the bathroom",
-	"would you marry me?",
+	"would you marry me?"
 ];
 
 $(document).ready(function() {	
