@@ -74,9 +74,6 @@ body {
 h1, h2, h3 {
 	display:none;
 }
-body {
-	/*background-image:url(body.jpg);*/
-}
 
 h1 {
 	margin:0;

@@ -29,13 +29,21 @@ var phrases = ["It all began with a great idea that came to life in a sudden",
 var privateBeta = [
 	"I want to participate to your amazing private beta",
 	"I can't wait to try timmyEvolved but for now, I have to go to the bathroom",
-	"would you marry me?"
+	"would you marry me?",
+	"I want to be part of the private beta of the best project monitoring app in the world"
 ];
 
 $(document).ready(function() {	
 	$("#show_credits, #close_credits").click(function() {
 		$("#more").toggle();
 	});
+	
+	if (document.location.hash == "#serge") {
+		$("body").css("backgroundImage", "url(body.jpg)");
+		$("h1,h2,h3").show();
+		$("#more").show();
+		return;
+	}
 	
 	// private beta
 	$("#beta").click(function() {
