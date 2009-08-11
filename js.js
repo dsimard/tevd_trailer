@@ -2,8 +2,7 @@ var bodyBackground = "http://img14.imageshack.us/img14/8394/bodyf.jpg";
 var lightnings = [
 	{url:"http://img27.imageshack.us/img27/7315/back1i.jpg", yOffset:0},
 	{url:"http://farm2.static.flickr.com/1160/1272045819_ee2919522f_o.jpg", yOffset:-900},
-	//{url:"http://farm3.static.flickr.com/2417/2053473900_68aa754870_o.jpg", yOffset:-120},
-	{url:"http://farm2.static.flickr.com/1220/1218754772_d85c2e3407_o.jpg", yOffset:-120},
+	{url:"http://farm2.static.flickr.com/1220/1218754772_d85c2e3407_o.jpg", yOffset:-120}
 ]
 
 var lightning_images = [];
